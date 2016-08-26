@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        #banner {
+            width: 540px;
+            position: relative;
+            overflow: hidden;
+        }
+        #banner ul:first-child {
+            transform: translateX(-540px);
+        }
+        #banner ul:first-child li {
+            float: left;
+            width: 540px;
+        }
+        #banner ul:first-child li a {
+            display: block;
+        }
+        #banner ul:first-child li a img{
+            display: block;
+        }
+        #banner ul:last-child {
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            margin-left: -50px;
+        }
+        #banner ul:last-child li {
+            float: left;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #999;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        .clearfix:after {
+            content: '';
+            height: 0;
+            line-height: 0;
+            visibility: hidden;
+            display: block;
+            clear: both;
+        }
+        #banner ul:last-child .active {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<script src="js/jquery-1.12.0.js"></script>
+<script src="js/mtBanner.js"></script>
+<script>
+    //数据
+    var data = [
+        {img: "./images/1.gif", alt: "1.gif"},
+        {img: "./images/2.gif", alt: "2.gif"},
+        {img: "./images/3.gif", alt: "3.gif"},
+        {img: "./images/4.gif", alt: "4.gif"},
+        {img: "./images/5.gif", alt: "5.gif"}
+    ];
+    $(function () {
+        $mtBanner(data);
+    })
+</script>
+</body>
+</html>
